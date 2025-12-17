@@ -1,6 +1,7 @@
 .main {
   padding: 205px 0;
-  background: url("/images/main-bg.jpeg") right/cover no-repeat;
+  background: url("/layout-project-test/images/main-bg.jpeg") right/cover
+    no-repeat;
   &_content {
     display: flex;
     flex-direction: column;

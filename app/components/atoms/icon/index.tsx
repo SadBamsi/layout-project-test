@@ -6,7 +6,7 @@ export const Icon: FC<{ className?: string; icon: string }> = ({
 }) => {
   return (
     <svg className={className}>
-      <use xlinkHref={`/icons/icons-sprite.svg#${icon}`} />
+      <use xlinkHref={`/layout-project-test/icons/icons-sprite.svg#${icon}`} />
     </svg>
   );
 };
