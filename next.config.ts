@@ -7,12 +7,11 @@ const basePath = isProd ? repo : "";
 const nextConfig: NextConfig = {
   output: "export",
   basePath: basePath,
+  assetPrefix: basePath,
   images: {
     unoptimized: true,
   },
   trailingSlash: true,
-
-  assetPrefix: isProd ? process.env.NEXT_PUBLIC_BASE_PATH : "",
 };
 
 export default nextConfig;
