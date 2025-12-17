@@ -1,0 +1,80 @@
+.select {
+  position: relative;
+  width: 100%;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  &__control {
+    height: 56px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #3a3b4a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  &__value--placeholder {
+    opacity: 0.7;
+  }
+
+  &__arrow {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    border-right: 0;
+    border-top: 0;
+    color: #fff;
+    transform: rotateZ(0);
+    transition: transform 0.2s ease;
+  }
+
+  &__arrow--open {
+    transform: rotateZ(0);
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 8px;
+    background: #2c2d3a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+
+  &__dropdown--open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  &__options {
+    overflow-y: auto;
+  }
+
+  &__option {
+    width: 100%;
+    padding: 12px 20px;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__option:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &__option--active {
+    color: #7fb0ff;
+  }
+}

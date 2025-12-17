@@ -1,0 +1,14 @@
+.title {
+    font-family: var(--font-lato);
+    line-height: 1;
+    font-weight: 700;
+    &_main {
+        font-size: 48px;
+    }
+    &_second {
+        font-size: 36px;
+    }
+    &_fourth {
+        font-size: 20px;
+    }
+}

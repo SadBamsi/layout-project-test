@@ -1,0 +1,27 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    padding-left: 25px;
+    &_wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    &_item {
+        vertical-align: middle; 
+        color: var(--text-color__dark);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 5px;
+            height: 1px;
+            background-color: var(--text-color__dark);
+            top: 50%;
+            transform: translateY(-50%);
+            left: -15px;
+        }
+    }
+}

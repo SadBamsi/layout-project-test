@@ -1,0 +1,15 @@
+.baseText {
+    display: inline-block;
+    font-family: var(--font-lato);
+    font-weight: 400;
+    line-height: 1;
+    &__xl {
+        font-size: 20px;
+    }
+    &__m {
+        font-size: 18px;
+    }
+    &__s {
+        font-size: 16px;
+    }
+}
