@@ -10,7 +10,7 @@ const defaultData = [
 
 export const List = () => {
   return (
-    <div className={styles.list_wrapper}>
+    <div className={styles.list_wrapper} id="about">
       <Title type={TitleType.H4} className={styles.list__title}>
         At vero eos et accusamus et iusto odio dignissimos ducimus!
       </Title>

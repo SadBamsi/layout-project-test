@@ -7,7 +7,7 @@ import { Form } from "../../molecules/form";
 
 export const FormSection: FC = () => {
   return (
-    <section className={styles.formSection}>
+    <section className={styles.formSection} id="order">
       <div className="container">
         <div className={styles.formSection_content}>
           <div className={styles.formSection_textContent}>

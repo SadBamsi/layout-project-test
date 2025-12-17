@@ -2,11 +2,17 @@
 import Link, { LinkProps } from "next/link";
 import styles from "./link.styles.module.scss";
 import { FC, PropsWithChildren } from "react";
-import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
-
-
-export const CustomLink: FC<LinkProps & PropsWithChildren> = (props) => {
-    const currentPath = usePathname();
-    return <Link {...props} className={styles.link + (currentPath === props.href ? " " + styles.link__active : "")}></Link>
-}
+export const CustomLink: FC<
+  LinkProps & PropsWithChildren & { isActive?: boolean }
+> = ({ isActive, ...props }) => {
+  return (
+    <Link
+      {...props}
+      className={clsx(styles.link, isActive && styles.link__active)}
+    >
+      {props.children}
+    </Link>
+  );
+};
