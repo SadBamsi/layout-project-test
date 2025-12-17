@@ -1,80 +1,92 @@
 .select {
   position: relative;
   width: 100%;
-  color: #fff;
-  font-family: system-ui, sans-serif;
+  color: #272733;
+  font-size: 18px;
+  font-family: var(--font-lato);
   &__control {
-    height: 56px;
+    padding: 12px 20px 12px 10px;
     width: 100%;
-    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #3a3b4a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--border-color__primary);
+    border-radius: 4px;
     cursor: pointer;
   }
 
   &__value--placeholder {
     opacity: 0.7;
+    font-size: 18px;
   }
 
   &__arrow {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     border: 1px solid #000;
     border-right: 0;
     border-top: 0;
     color: #fff;
-    transform: rotateZ(0);
+    transform: rotate(-45deg);
+    transform-origin: 50% 50%;
     transition: transform 0.2s ease;
   }
 
   &__arrow--open {
-    transform: rotateZ(0);
+    transform: rotate(135deg);
   }
 
   &__dropdown {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     left: 0;
     right: 0;
-    margin-top: 8px;
-    background: #2c2d3a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    background-color: #dfdfe1;
+    border-radius: 0 0 4px 4px;
     overflow: hidden;
-    opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
     transition: all 0.2s ease;
+    max-height: 0;
+    z-index: 10;
   }
 
   &__dropdown--open {
-    opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+    max-height: 200px;
   }
 
   &__options {
     overflow-y: auto;
+    max-height: 200px;
   }
 
   &__option {
     width: 100%;
     padding: 12px 20px;
     text-align: left;
-    background: transparent;
-    border: none;
-    color: #fff;
+    color: #272733;
     cursor: pointer;
   }
 
-  &__option:hover {
-    background: rgba(255, 255, 255, 0.05);
+  &__option:hover:not(.select__option--active) {
+    opacity: 0.7;
   }
 
   &__option--active {
-    color: #7fb0ff;
+    color: #42a9ed;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    &__control {
+      padding: 10px 16px 10px 8px;
+    }
+    &__option {
+      padding: 10px 16px;
+    }
   }
 }

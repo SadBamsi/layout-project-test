@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Lato, Raleway } from "next/font/google";
 import "./globals.css";
-import { Header } from "./components/atoms/header";
+import { Header } from "./components/organisms/header";
+import { Footer } from "./components/organisms/footer";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={`${lato.variable} ${raleway.variable} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

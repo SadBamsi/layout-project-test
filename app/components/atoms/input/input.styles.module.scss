@@ -7,11 +7,17 @@
   font-family: var(--font-lato);
   font-size: 18px;
   transition: all 0.25s linear;
+  color: #272733;
+
   &::placeholder {
     color: #272733;
   }
   &:focus {
     outline: none;
     box-shadow: 0 0 11px 5px var(--link-color__active);
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    padding: 10px 8px;
   }
 }

@@ -1,14 +1,25 @@
 .title {
-    font-family: var(--font-lato);
-    line-height: 1;
-    font-weight: 700;
+  font-family: var(--font-lato);
+  line-height: 1;
+  font-weight: 700;
+  &_main {
+    font-size: 48px;
+  }
+  &_second {
+    font-size: 36px;
+  }
+  &_fourth {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 768px) {
     &_main {
-        font-size: 48px;
+      font-size: 32px;
     }
     &_second {
-        font-size: 36px;
+      font-size: 24px;
     }
     &_fourth {
-        font-size: 20px;
+      font-size: 16px;
     }
+  }
 }

@@ -3,7 +3,6 @@
 import { FC, useEffect, useRef, useState } from "react";
 import styles from "./select.styles.module.scss";
 import clsx from "clsx";
-import { Icon } from "../icon";
 
 interface CustomSelectProps {
   options: string[];
@@ -18,7 +17,6 @@ export const CustomSelect: FC<CustomSelectProps> = ({
   value,
   onChange,
   placeholder = "Выберите тип системы",
-  maxHeight = 240,
 }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
@@ -58,14 +56,22 @@ export const CustomSelect: FC<CustomSelectProps> = ({
         ></div>
       </button>
 
-      <div style={{ maxHeight: open ? maxHeight : 0 }}>
-        <div className="overflow-y-auto" style={{ maxHeight }}>
+      <div
+        className={clsx(
+          styles.select__dropdown,
+          open && styles["select__dropdown--open"]
+        )}
+      >
+        <div className={styles.select__options}>
           {options.map((option) => {
             const active = option === value;
             return (
               <button
-                key={String(option)}
-                type="button"
+                className={clsx(
+                  styles.select__option,
+                  active && styles["select__option--active"]
+                )}
+                key={option}
                 onClick={() => {
                   onChange && onChange(option);
                   setOpen(false);

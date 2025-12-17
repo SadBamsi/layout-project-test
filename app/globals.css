@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bg-light: #fff;
+  --bg-dark: #3d4050;
   --text-color__light: #fff;
   --text-color__dark: #000;
   --text-color__gray: #bbbbbb;

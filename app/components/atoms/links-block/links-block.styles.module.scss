@@ -1,4 +1,7 @@
 .links_block {
-    display: flex;
-    column-gap: 60px;
+  display: flex;
+  column-gap: 60px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }

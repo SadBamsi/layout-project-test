@@ -21,4 +21,13 @@
     font-size: 15px;
     text-transform: uppercase;
   }
+  @media screen and (max-width: 1024px) {
+    padding: 120px 0 150px;
+    background-position: 80% top;
+    &_buttons_wrapper {
+      flex-direction: column;
+      row-gap: 20px;
+      align-items: center;
+    }
+  }
 }
