@@ -11,9 +11,9 @@ const defaultData = [
 export const List = () => {
   return (
     <div className={styles.list__wrapper} id="about">
-      <Title variant={TitleType.H3} className={styles.list__title}>
+      <BaseText type="xl" className={styles.list__title}>
         At vero eos et accusamus et iusto odio dignissimos ducimus!
-      </Title>
+      </BaseText>
       <ul className={styles.list}>
         {defaultData.map((item) => (
           <li className={styles.list__item} key={item}>
