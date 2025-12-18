@@ -44,6 +44,7 @@ export const Form: FC<{
 
       <Input
         name="email"
+        aria-label="email"
         type="email"
         placeholder="Ваш e-mail"
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -56,6 +57,7 @@ export const Form: FC<{
       <Input
         name="name"
         placeholder="Ваше имя"
+        aria-label="name"
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
           action((prev) => ({
             ...prev,
