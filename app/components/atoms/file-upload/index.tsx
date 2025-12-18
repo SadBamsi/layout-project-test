@@ -59,18 +59,16 @@ export const CustomFileUpload: FC<{
         aria-label="file upload"
         type="file"
         ref={fileInputRef}
-        className={styles.file_upload__input}
+        className={styles["file-upload__input"]}
         onChange={handleFileChange}
       />
 
       <button
         type="button"
-        className={styles.file_upload__button}
+        className={styles["file-upload__button"]}
         onClick={handleButtonClick}
       >
-        <span className={styles.file_upload__buttonText}>
-          {fileName ? fileName : "Выберите файл"}
-        </span>
+        {fileName ? fileName : "Выберите файл"}
         <Icon />
       </button>
     </div>

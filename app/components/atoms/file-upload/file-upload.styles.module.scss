@@ -1,6 +1,6 @@
 // Нижнее подчеркивание используется для разделения слов, но не создаёт ни сущности, ни блков БЭМ. Так просто удобнее работать в SCSS-модулях.
 
-.file_upload {
+.file-upload {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -18,7 +18,6 @@
   }
 
   &__button {
-    $block: &;
     width: 100%;
     font-family: var(--font-lato);
     text-transform: uppercase;
@@ -40,7 +39,7 @@
     }
   }
 
-  &__file_name {
+  &__file-name {
     font-size: 14px;
     color: #94a3b8;
     max-width: 200px;
