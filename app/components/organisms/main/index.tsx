@@ -6,18 +6,23 @@ import { Button } from "../../atoms/button";
 
 export const Main = () => {
   return (
-    <main className={styles.main}>
-      <div className={clsx(styles.main_content, "container")}>
-        <Title className={styles.main_title} type={TitleType.H1}>
+    <main
+      className={clsx(
+        styles.main,
+        process.env.NODE_ENV === "production" && styles["main--prod-bg"]
+      )}
+    >
+      <div className={clsx(styles.main__content, "container")}>
+        <Title className={styles.main__title} variant={TitleType.H1}>
           <span className="blue-text">Lorem ipsum</span> dolor sit amet
           consectetur <span className="blue-text">adipiscing</span>
         </Title>
         <List />
-        <div className={styles.main_buttons_wrapper}>
-          <Button className={styles.main_button} variant="primary">
+        <div className={styles.main__buttons_wrapper}>
+          <Button className={styles.main__button} variant="primary">
             Заказать
           </Button>
-          <Button className={styles.main_button} variant="secondary">
+          <Button className={styles.main__button} variant="secondary">
             Подробнее
           </Button>
         </div>

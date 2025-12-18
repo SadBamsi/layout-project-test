@@ -1,17 +1,20 @@
-.rangeSlider {
+.range {
   width: 100%;
   font-family: var(--font-lato);
+
   &__label {
     font-size: 18px;
     color: var(--text-color__light);
     display: flex;
     justify-content: space-between;
   }
+
   &__percentage {
     font-weight: 600;
     pointer-events: none;
   }
-  &__sliderContainer {
+
+  &__slider_container {
     position: relative;
     display: flex;
     align-items: center;
@@ -24,6 +27,7 @@
     width: 100%;
     outline: none;
     margin: 0;
+
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -68,8 +72,5 @@
   &--disabled {
     opacity: 0.5;
     pointer-events: none;
-    .rangeSlider__slider {
-      cursor: not-allowed;
-    }
   }
 }

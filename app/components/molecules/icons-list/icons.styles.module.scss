@@ -1,0 +1,141 @@
+.icons {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+
+  &__item {
+    display: flex;
+    column-gap: 12px;
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #286690;
+    background-color: var(--bg-dark);
+    transition: background-color 0.25s linear;
+
+    &--active {
+      background-color: var(--colored-text);
+    }
+  }
+
+  &__item-content {
+    display: flex;
+    column-gap: 12px;
+  }
+
+  &__icon {
+    width: 35px;
+  }
+
+  &__separators {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  @media (max-width: 1200px) {
+    column-gap: 6px;
+
+    &__icon-wrapper {
+      width: 70px;
+      height: 70px;
+    }
+
+    &__icon {
+      width: 24px;
+    }
+
+    &__separators {
+      column-gap: 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    column-gap: 12px;
+
+    &__icon-wrapper {
+      width: 60px;
+      height: 60px;
+    }
+
+    &__icon {
+      width: 15px;
+    }
+
+    &__item {
+      column-gap: 12px;
+    }
+
+    &__separators {
+      column-gap: 4px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    justify-content: center;
+    column-gap: 6px;
+
+    &__icon-wrapper {
+      width: 50px;
+      height: 50px;
+    }
+
+    &__icon {
+      width: 15px;
+    }
+
+    &__item-content {
+      column-gap: 6px;
+    }
+
+    &__separators {
+      column-gap: 2px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    justify-content: center;
+    column-gap: 6px;
+
+    &__icon-wrapper {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__icon {
+      width: 10px;
+    }
+
+    &__item-content {
+      column-gap: 6px;
+    }
+
+    &__separators {
+      column-gap: 2px;
+    }
+  }
+}
+
+.dot {
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #c4c4c4;
+
+  @media (max-width: 1200px) {
+    width: 2px;
+    height: 2px;
+  }
+
+  @media (max-width: 768px) {
+    width: 2px;
+    height: 2px;
+  }
+}

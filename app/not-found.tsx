@@ -1,4 +1,4 @@
-import { BackButton } from "./components/atoms/back-button";
+import { Back } from "./components/atoms/back";
 import { BaseText } from "./components/atoms/base-text";
 import { Title, TitleType } from "./components/atoms/title";
 
@@ -15,9 +15,9 @@ const NotFound = () => {
           width: "100%",
         }}
       >
-        <Title type={TitleType.H2}>404</Title>
+        <Title variant={TitleType.H2}>404</Title>
         <BaseText type="xl">Страница не найдена</BaseText>
-        <BackButton />
+        <Back />
       </div>
     </div>
   );

@@ -12,16 +12,16 @@ export enum TitleType {
 }
 
 export const Title: FC<
-  { type: TitleType } & DetailedHTMLProps<
+  { variant: TitleType } & DetailedHTMLProps<
     HTMLAttributes<HTMLHeadingElement>,
     HTMLHeadingElement
   >
-> = (props) => {
+> = ({ variant, ...props }) => {
   const component: Record<TitleType, ReactNode> = {
     [TitleType.H1]: (
       <h1
         {...props}
-        className={clsx(styles.title, styles.title_main, props.className)}
+        className={clsx(styles.title, styles["title--main"], props.className)}
       >
         {props.children}
       </h1>
@@ -29,23 +29,23 @@ export const Title: FC<
     [TitleType.H2]: (
       <h2
         {...props}
-        className={clsx(styles.title, styles.title_second, props.className)}
+        className={clsx(styles.title, styles["title--second"], props.className)}
       >
         {props.children}
       </h2>
     ),
-    [TitleType.H3]: <h3 {...props}>{props.children}</h3>,
-    [TitleType.H4]: (
-      <h4
+    [TitleType.H3]: (
+      <h3
         {...props}
-        className={clsx(styles.title, styles.title_fourth, props.className)}
+        className={clsx(styles.title, styles["title--third"], props.className)}
       >
         {props.children}
-      </h4>
+      </h3>
     ),
+    [TitleType.H4]: <h4 {...props}>{props.children}</h4>,
     [TitleType.H5]: <h5 {...props}>{props.children}</h5>,
     [TitleType.H6]: <h6 {...props}>{props.children}</h6>,
   };
 
-  return component[props.type];
+  return component[variant];
 };

@@ -54,9 +54,9 @@ const BurgerMenu: FC = () => {
         aria-label="Открыть меню"
         ref={buttonRef}
       >
-        <div className={styles.burger__line} />
-        <div className={styles.burger__line} />
-        <div className={styles.burger__line} />
+        <span className={styles.burger__line} />
+        <span className={styles.burger__line} />
+        <span className={styles.burger__line} />
       </button>
 
       <nav

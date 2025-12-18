@@ -1,25 +1,36 @@
-.baseText {
+.base_text {
   display: inline-block;
   font-family: var(--font-lato);
   font-weight: 400;
   line-height: 1;
-  &__xl {
+
+  &--xl {
     font-size: 20px;
   }
-  &__m {
+
+  &--m {
     font-size: 18px;
   }
-  &__s {
+
+  &--s {
     font-size: 16px;
   }
-  @media screen and (max-width: 768px) {
-    &__xl {
+
+  &--xs {
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    &--xl {
       font-size: 16px;
     }
-    &__m {
+
+    &--m {
       font-size: 14px;
     }
-    &__s {
+
+    &--s,
+    &--xs {
       font-size: 12px;
     }
   }

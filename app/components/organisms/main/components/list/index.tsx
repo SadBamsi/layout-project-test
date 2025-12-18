@@ -10,13 +10,13 @@ const defaultData = [
 
 export const List = () => {
   return (
-    <div className={styles.list_wrapper} id="about">
-      <Title type={TitleType.H4} className={styles.list__title}>
+    <div className={styles.list__wrapper} id="about">
+      <Title variant={TitleType.H3} className={styles.list__title}>
         At vero eos et accusamus et iusto odio dignissimos ducimus!
       </Title>
       <ul className={styles.list}>
         {defaultData.map((item) => (
-          <li className={styles.list_item} key={item}>
+          <li className={styles.list__item} key={item}>
             <BaseText type="xl">{item}</BaseText>
           </li>
         ))}

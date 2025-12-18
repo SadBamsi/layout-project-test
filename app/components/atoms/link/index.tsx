@@ -10,7 +10,7 @@ export const CustomLink: FC<
   return (
     <Link
       {...props}
-      className={clsx(styles.link, isActive && styles.link__active)}
+      className={clsx(styles.link, isActive && styles["link--active"])}
     >
       {props.children}
     </Link>

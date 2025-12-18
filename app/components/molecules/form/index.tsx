@@ -1,28 +1,25 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react-hooks/preserve-manual-memoization */
 "use client";
-import { useCallback, useState } from "react";
+import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
 import { Input } from "../../atoms/input";
 import { CustomSelect } from "../../atoms/select";
 import styles from "./form.styles.module.scss";
-import { RangeSlider } from "../../atoms/range-slider";
+import { RangeSlider } from "../../atoms/range";
 import { CustomFileUpload } from "../../atoms/file-upload";
 import { Button } from "../../atoms/button";
+import { IFormState } from "../../organisms/form-section";
 
 const defaultFormState = {
   selectValue: "",
   email: "",
   name: "",
   file: null,
+  range: "",
 };
 
-export const Form = () => {
-  const [formState, setFormState] = useState(defaultFormState);
-
-  const changeSelect = useCallback(
-    (value: string) => setFormState({ ...formState, selectValue: value }),
-    []
-  );
+export const Form: FC<{
+  action: Dispatch<SetStateAction<IFormState>>;
+  formState: IFormState;
+}> = ({ action, formState }) => {
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
@@ -42,19 +39,38 @@ export const Form = () => {
           "jfbvhjd",
         ]}
         value={formState.selectValue}
-        onChange={changeSelect}
+        onChange={action}
       />
 
-      <Input name="email" type="email" placeholder="Ваш e-mail" />
-      <Input name="name" placeholder="Ваше имя" />
-      <RangeSlider className={styles["form__item--big"]} />
-      <CustomFileUpload />
+      <Input
+        name="email"
+        type="email"
+        placeholder="Ваш e-mail"
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          action((prev) => ({
+            ...prev,
+            email: e.target.value,
+          }))
+        }
+      />
+      <Input
+        name="name"
+        placeholder="Ваше имя"
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          action((prev) => ({
+            ...prev,
+            name: e.target.value,
+          }))
+        }
+      />
+      <RangeSlider className={styles["form__item--big"]} action={action} />
+      <CustomFileUpload action={action} />
       <Button
         variant="primary"
         className={styles.form__submit}
         onClick={() => {
           alert("Форма была отправлена");
-          setFormState(defaultFormState);
+          action(defaultFormState);
         }}
       >
         Отправить
