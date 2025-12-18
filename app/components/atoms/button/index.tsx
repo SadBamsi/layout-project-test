@@ -15,8 +15,8 @@ export const Button: FC<
     <button
       {...props}
       className={clsx(styles.button, props.className, {
-        [styles.button__primary]: variant === "primary",
-        [styles.button__secondary]: variant === "secondary",
+        [styles["button--primary"]]: variant === "primary",
+        [styles["button--secondary"]]: variant === "secondary",
       })}
       onClick={props.onClick ? props.onClick : props.action}
     >

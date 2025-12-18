@@ -9,17 +9,25 @@
   border-radius: 4px;
   transition: all 0.3s ease;
   background-color: var(--bg-color);
-  &__primary {
+
+  &--primary {
     border-color: var(--border-color__primary);
     color: var(--text-color__light);
     --bg-color: var(--colored-text);
   }
-  &__secondary {
+
+  &--secondary {
     border-color: var(--border-color__secondary);
     color: var(--text-color__dark);
     --bg-color: #fff;
   }
+
   &:hover {
     background-color: color-mix(in srgb, var(--bg-color) 90%, black);
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 0;
+    font-size: 14px;
   }
 }

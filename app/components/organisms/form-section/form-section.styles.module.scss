@@ -1,34 +1,45 @@
-.formSection {
+.form_section {
   padding: 120px 0 150px;
-  background: url("/layout-project-test/images/form-BG.jpeg") center/cover
-    no-repeat rgba(245, 248, 255);
-  &_content {
+  background: url("/images/form-BG.jpeg") center/cover no-repeat
+    rgba(245, 248, 255);
+
+  &__content {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 80px;
   }
-  &_textContent {
+
+  &__text_content {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
     align-items: center;
     text-align: center;
   }
-  &_title {
+
+  &__title {
     color: var(--text-color__light);
     text-transform: uppercase;
   }
-  &_description {
+
+  &__description {
     color: var(--text-color__gray);
   }
-  @media screen and (max-width: 768px) {
+
+  &--prod-bg {
+    background: url("/layout-project-test/images/form-BG-prod.jpeg")
+      center/cover no-repeat rgba(245, 248, 255);
+  }
+  @media (max-width: 768px) {
     padding: 80px 0 100px;
-    &_content {
+
+    &__content {
       row-gap: 40px;
     }
-    &_textContent {
+
+    &__text_content {
       row-gap: 20px;
     }
   }

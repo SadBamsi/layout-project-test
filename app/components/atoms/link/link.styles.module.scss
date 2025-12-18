@@ -1,11 +1,13 @@
 .link {
-    font-size: 13px;
-    transition: opacity 0.3s ease;
-    color: var(--link-color);
-    &__active {
-        color: var(--link-color__active);
-    }
-    &:hover:not(.link__active) {
-        opacity: 0.7;
-    }
+  font-size: 13px;
+  transition: opacity 0.3s ease;
+  color: var(--link-color);
+
+  &--active {
+    color: var(--link-color__active);
+  }
+
+  &:hover:not(.link--active) {
+    opacity: 0.7;
+  }
 }
