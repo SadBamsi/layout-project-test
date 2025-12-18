@@ -29,8 +29,8 @@
   }
 
   &--prod-bg {
-    background: url("/layout-project-test/images/form-BG-prod.jpeg")
-      center/cover no-repeat rgba(245, 248, 255);
+    background: url("/layout-project-test/images/form-BG.jpeg") center/cover
+      no-repeat rgba(245, 248, 255);
   }
   @media (max-width: 768px) {
     padding: 80px 0 100px;
