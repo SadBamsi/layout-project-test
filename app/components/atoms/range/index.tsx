@@ -51,6 +51,7 @@ export const RangeSlider: FC<{
 
       <div className={styles.range__slider_container}>
         <input
+          aria-label="range"
           type="range"
           min="0"
           max="100"

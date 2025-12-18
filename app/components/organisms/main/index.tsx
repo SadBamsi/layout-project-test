@@ -11,6 +11,8 @@ export const Main = () => {
         styles.main,
         process.env.NODE_ENV === "production" && styles["main--prod-bg"]
       )}
+      id="main"
+      tabIndex={-1}
     >
       <div className={clsx(styles.main__content, "container")}>
         <Title className={styles.main__title} variant={TitleType.H1}>
