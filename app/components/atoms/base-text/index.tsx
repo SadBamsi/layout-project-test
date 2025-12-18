@@ -14,8 +14,8 @@ export const BaseText: FC<
     <span
       {...props}
       className={clsx(
-        styles.base_text,
-        styles[`base_text--${type}`],
+        styles["base-text"],
+        styles[`base-text--${type}`],
         props.className
       )}
     >
