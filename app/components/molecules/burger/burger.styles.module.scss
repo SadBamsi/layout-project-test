@@ -1,4 +1,5 @@
 .burger {
+  $block: &;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -9,6 +10,7 @@
   cursor: pointer;
   padding: 0;
   z-index: 10;
+
   &:focus {
     outline: none;
   }
@@ -32,10 +34,8 @@
     &:nth-child(3) {
       transition: all 0.3s ease-in-out;
     }
-  }
 
-  &--open {
-    .burger__line {
+    #{$block}--open & {
       &:first-child {
         transform: rotate(45deg);
       }
@@ -49,7 +49,8 @@
       }
     }
   }
-  @media screen and (min-width: 769px) {
+
+  @media (min-width: 769px) {
     display: none;
   }
 }
@@ -89,11 +90,13 @@
     &:hover {
       opacity: 0.7;
     }
+
     &--active {
       color: var(--link-color__active);
     }
   }
-  @media screen and (min-width: 769px) {
+
+  @media (min-width: 769px) {
     display: none;
   }
 }

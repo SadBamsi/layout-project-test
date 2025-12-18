@@ -2,23 +2,23 @@
   font-family: var(--font-lato);
   line-height: 1;
   font-weight: 700;
-  &_main {
+  &--main {
     font-size: 48px;
   }
-  &_second {
+  &--second {
     font-size: 36px;
   }
-  &_fourth {
+  &--third {
     font-size: 20px;
   }
-  @media screen and (max-width: 768px) {
-    &_main {
+  @media (max-width: 768px) {
+    &--main {
       font-size: 32px;
     }
-    &_second {
+    &--second {
       font-size: 24px;
     }
-    &_fourth {
+    &--third {
       font-size: 16px;
     }
   }

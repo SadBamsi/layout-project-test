@@ -1,11 +1,20 @@
 "use client";
 
-import { ChangeEvent, useRef, useState } from "react";
+import {
+  ChangeEvent,
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import styles from "./file-upload.styles.module.scss";
+import { IFormState } from "../../organisms/form-section";
 
 const Icon = () => (
   <svg
-    className={styles.fileUpload__icon}
+    className={styles.file_upload__icon}
     xmlns="http://www.w3.org/2000/svg"
     width="18"
     height="20"
@@ -19,9 +28,18 @@ const Icon = () => (
   </svg>
 );
 
-export const CustomFileUpload = () => {
+export const CustomFileUpload: FC<{
+  action: Dispatch<SetStateAction<IFormState>>;
+}> = ({ action }) => {
   const [fileName, setFileName] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    action((prevState) => ({
+      ...prevState,
+      file: !!fileName,
+    }));
+  }, [fileName]);
 
   const handleButtonClick = () => {
     fileInputRef.current?.click();
@@ -36,20 +54,20 @@ export const CustomFileUpload = () => {
   };
 
   return (
-    <div className={styles.fileUpload}>
+    <div className={styles.file_upload}>
       <input
         type="file"
         ref={fileInputRef}
-        className={styles.fileUpload__input}
+        className={styles.file_upload__input}
         onChange={handleFileChange}
       />
 
       <button
         type="button"
-        className={styles.fileUpload__button}
+        className={styles.file_upload__button}
         onClick={handleButtonClick}
       >
-        <span className={styles.fileUpload__buttonText}>
+        <span className={styles.file_upload__buttonText}>
           {fileName ? fileName : "Выберите файл"}
         </span>
         <Icon />

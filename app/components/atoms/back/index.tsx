@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Button } from "../button";
 
-export const BackButton = () => {
+export const Back = () => {
   const { push } = useRouter();
   return (
     <Button

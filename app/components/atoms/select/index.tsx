@@ -1,13 +1,21 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import styles from "./select.styles.module.scss";
 import clsx from "clsx";
+import { IFormState } from "../../organisms/form-section";
 
 interface CustomSelectProps {
   options: string[];
-  value?: string;
-  onChange?: (value: string) => void;
+  value: string;
+  onChange: Dispatch<SetStateAction<IFormState>>;
   placeholder?: string;
   maxHeight?: number;
 }
@@ -48,12 +56,12 @@ export const CustomSelect: FC<CustomSelectProps> = ({
         >
           {value || placeholder}
         </span>
-        <div
+        <span
           className={clsx(
             styles.select__arrow,
             open && styles["select__arrow--open"]
           )}
-        ></div>
+        />
       </button>
 
       <div
@@ -73,7 +81,10 @@ export const CustomSelect: FC<CustomSelectProps> = ({
                 )}
                 key={option}
                 onClick={() => {
-                  onChange && onChange(option);
+                  onChange((prev) => ({
+                    ...prev,
+                    selectValue: option,
+                  }));
                   setOpen(false);
                 }}
               >

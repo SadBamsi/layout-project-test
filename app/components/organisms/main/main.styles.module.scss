@@ -1,31 +1,41 @@
 .main {
   padding: 205px 0;
-  background: url("/layout-project-test/images/main-bg.jpeg") right/cover
-    no-repeat;
-  &_content {
+  background: url("/images/main-bg.jpeg") right/cover no-repeat;
+
+  &__content {
     display: flex;
     flex-direction: column;
     row-gap: 80px;
   }
-  &_title {
+
+  &__title {
     max-width: 780px;
     color: var(--text-color__dark);
     text-transform: uppercase;
   }
-  &_buttons_wrapper {
+
+  &__buttons_wrapper {
     display: flex;
     column-gap: 30px;
   }
-  &_button {
+
+  &__button {
     max-width: 185px;
     width: 100%;
     font-size: 15px;
     text-transform: uppercase;
   }
-  @media screen and (max-width: 1024px) {
+
+  &--prod-bg {
+    background: url("/layout-project-test/images/main-bg.jpeg") right/cover
+      no-repeat;
+  }
+
+  @media (max-width: 1024px) {
     padding: 120px 0 150px;
     background-position: 80% top;
-    &_buttons_wrapper {
+
+    &__buttons_wrapper {
       flex-direction: column;
       row-gap: 20px;
       align-items: center;

@@ -2,6 +2,7 @@ import clsx from "clsx";
 import styles from "./footer.styles.module.scss";
 import { Icon } from "../../atoms/icon";
 import Link from "next/link";
+import { BaseText } from "../../atoms/base-text";
 
 const payments = ["QIWI", "Yandex", "Web Money"];
 
@@ -10,11 +11,11 @@ export const Footer = () => {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.footer__content}>
-          <p className={styles.footer__copyright}>
+          <BaseText type="xs" className={styles.footer__copyright}>
             © {new Date().getFullYear()}{" "}
             <span className={styles.footer__companyName}>LoremIpsum.NET</span>{" "}
             Все права защищены.
-          </p>
+          </BaseText>
           <div className={styles.footer__separator} />
           <ul className={clsx(styles.payments)}>
             {payments.map((payment) => (

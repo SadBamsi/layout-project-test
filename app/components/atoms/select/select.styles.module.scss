@@ -4,6 +4,7 @@
   color: #272733;
   font-size: 18px;
   font-family: var(--font-lato);
+
   &__control {
     padding: 12px 20px 12px 10px;
     width: 100%;
@@ -31,10 +32,10 @@
     transform: rotate(-45deg);
     transform-origin: 50% 50%;
     transition: transform 0.2s ease;
-  }
 
-  &__arrow--open {
-    transform: rotate(135deg);
+    &--open {
+      transform: rotate(135deg);
+    }
   }
 
   &__dropdown {
@@ -51,12 +52,12 @@
     transition: all 0.2s ease;
     max-height: 0;
     z-index: 10;
-  }
 
-  &__dropdown--open {
-    transform: translateY(0);
-    pointer-events: auto;
-    max-height: 200px;
+    &--open {
+      transform: translateY(0);
+      pointer-events: auto;
+      max-height: 200px;
+    }
   }
 
   &__options {
@@ -80,13 +81,15 @@
     color: #42a9ed;
   }
 
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     font-size: 16px;
+
     &__control {
-      padding: 10px 16px 10px 8px;
+      padding: 5px 10px 5px 8px;
     }
+
     &__option {
-      padding: 10px 16px;
+      padding: 5px 10px;
     }
   }
 }
