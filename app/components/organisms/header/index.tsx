@@ -1,4 +1,4 @@
-import { Links } from "../../atoms/links-block";
+import { Links } from "../../molecules/links";
 import { Logo } from "../../atoms/logo";
 import BurgerMenu from "../../molecules/burger";
 import styles from "./header.styles.module.scss";

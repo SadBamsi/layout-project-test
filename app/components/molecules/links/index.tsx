@@ -1,6 +1,6 @@
 "use client";
 import styles from "./links.styles.module.scss";
-import { CustomLink } from "../link";
+import { CustomLink } from "../../atoms/link";
 import { useState } from "react";
 
 const links = [
