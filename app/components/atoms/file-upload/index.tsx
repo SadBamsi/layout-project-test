@@ -56,6 +56,7 @@ export const CustomFileUpload: FC<{
   return (
     <div className={styles.file_upload}>
       <input
+        aria-label="file upload"
         type="file"
         ref={fileInputRef}
         className={styles.file_upload__input}

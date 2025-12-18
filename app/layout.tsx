@@ -29,6 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${lato.variable} ${raleway.variable} antialiased`}>
+        <a href="#main" className="skip-link">
+          Перейти к основному содержимому
+        </a>
         <Header />
         {children}
         <Footer />
